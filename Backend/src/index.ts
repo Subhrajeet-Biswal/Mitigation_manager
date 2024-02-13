@@ -1,10 +1,10 @@
 require('dotenv').config();
-const connection = require('./db/connection.ts');
+const {connectdb} = require('./db/connection.ts');
 const PORT = require('./constant.ts');
 const {app} = require('./app.ts')
 
 
-connection.connectdb()
+connectdb()
 .then(()=>{
     app.listen(PORT,()=>{
         console.log(`server listening at port ${PORT}`);

@@ -45,4 +45,4 @@ async function connectdb(){
 //     });
 // }
 
-module.exports = { connectdb };
+export {connectdb};
