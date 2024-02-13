@@ -15,8 +15,8 @@ async function gettable_controller(req: any, res: any) {
 
 async function createrecord_controller(req:any,res:any) {
     try{
-        await mitigationservice.createrecord_service(req.body);
-        res.send("Data added successfully");
+        let id = await mitigationservice.createrecord_service(req.body);
+        res.send(`Data added successfully with id = ${id}`);
     }catch(err){
         console.log("Data addition failed !",err);
     }

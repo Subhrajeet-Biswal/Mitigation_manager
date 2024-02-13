@@ -29,7 +29,7 @@ function createrecord_dao(data: any) {
       if (err) {
         reject(err);
       } else {
-        resolve(result.rows);
+        resolve(id);
       }
     });
   });
