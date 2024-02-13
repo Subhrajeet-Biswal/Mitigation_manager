@@ -10,16 +10,6 @@ const client = new pg.Client({
     database: "Mitigation-db"
 })
 
-// async function connectdb(){
-//     client.connect((err:any) => {
-//         if (err) {
-//           console.error('Error connecting to database: ' + err.stack);
-//           return;
-//         }
-//         console.log('Connected to the database.');
-//       });
-// }
-
 async function connectdb(){
   try{
     await client.connect();
@@ -45,4 +35,4 @@ async function connectdb(){
 //     });
 // }
 
-export {connectdb};
+export {connectdb,client};
