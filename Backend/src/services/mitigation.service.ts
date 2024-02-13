@@ -12,4 +12,8 @@ function createrecord_service(data:any){
     return mitigationdao.createrecord_dao(data);
 }
 
-export { gettable_service,createrecord_service };
+function deleterecord_service(id:any){
+    return mitigationdao.deleterecord_dao(id);
+}
+
+export { gettable_service,createrecord_service,deleterecord_service };

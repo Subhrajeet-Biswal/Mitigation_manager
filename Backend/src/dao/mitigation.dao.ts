@@ -35,4 +35,17 @@ function createrecord_dao(data: any) {
   });
 }
 
-export { gettable_dao, createrecord_dao };
+function deleterecord_dao(id:any){
+  return new Promise((resolve: any, reject: any) => {
+    let query = `DELETE FROM public."Mitigation" WHERE id='${id}'`;
+    client.query(query, (err: any, result: any) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(id);
+      }
+    });
+  });
+}
+
+export { gettable_dao, createrecord_dao,deleterecord_dao };

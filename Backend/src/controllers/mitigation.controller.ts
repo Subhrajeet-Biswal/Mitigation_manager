@@ -22,4 +22,14 @@ async function createrecord_controller(req:any,res:any) {
     }
 }
 
-export { gettable_controller, createrecord_controller };
+async function deleterecord_controller(req:any,res:any) {
+    try{
+        let id = await mitigationservice.deleterecord_service(req.params.id);
+        res.send(`Data deletion successful with id = ${id}`);
+    }catch(err){
+        console.log("Data deletion failed !",err);
+    }
+    
+}
+
+export { gettable_controller, createrecord_controller,deleterecord_controller };
