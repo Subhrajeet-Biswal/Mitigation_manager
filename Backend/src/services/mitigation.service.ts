@@ -15,6 +15,14 @@ function deleterecord_service(id: any) {
   return mitigationdao.deleterecord_dao(id);
 }
 
+function updatepremitigationscore_service(id: any, data: any) {
+  return mitigationdao.updatepremitigationscore_dao(id, data);
+}
+
+function updatepostmitigationscore_service(id: any, data: any) {
+  return mitigationdao.updatepostmitigationscore_dao(id, data);
+}
+
 function updatepremitigationavg_service() {
   return mitigationdao.updatepremitigationavg_dao();
 }
@@ -27,6 +35,8 @@ export {
   gettable_service,
   createrecord_service,
   deleterecord_service,
+  updatepremitigationscore_service,
+  updatepostmitigationscore_service,
   updatepremitigationavg_service,
   updatepostmitigationavg_service,
 };

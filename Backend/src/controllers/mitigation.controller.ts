@@ -45,9 +45,42 @@ async function deleterecord_controller(req: any, res: any) {
     console.log("Data deletion failed !", err);
   }
 }
+async function updatepremitigationscore_controller(req: any, res: any) {
+  try {
+    let updatedId = await mitigationservice.updatepremitigationscore_service(
+      req.params.id,
+      req.body
+    );
+    let preMitigationAvgresult =
+      await mitigationservice.updatepremitigationavg_service();
+    let preMitigationAvg = parseFloat(preMitigationAvgresult).toFixed(2);
+    res.send({ updatedId, preMitigationAvg });
+    console.log(`Premitigation_score updated for id = ${updatedId}`);
+  } catch (err) {
+    console.log("Premitigation_score update failed !!", err);
+  }
+}
+
+async function updatepostmitigationscore_controller(req: any, res: any) {
+  try {
+    let updatedId = await mitigationservice.updatepostmitigationscore_service(
+      req.params.id,
+      req.body
+    );
+    let postMitigationAvgresult =
+      await mitigationservice.updatepostmitigationavg_service();
+    let postMitigationAvg = parseFloat(postMitigationAvgresult).toFixed(2);
+    res.send({ updatedId, postMitigationAvg });
+    console.log(`Postmitigation_score updated for id = ${updatedId}`);
+  } catch (err) {
+    console.log("Postmitigation_score update failed !!", err);
+  }
+}
 
 export {
   gettable_controller,
   createrecord_controller,
   deleterecord_controller,
+  updatepremitigationscore_controller,
+  updatepostmitigationscore_controller,
 };

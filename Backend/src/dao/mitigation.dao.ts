@@ -18,8 +18,8 @@ function createrecord_dao(data: any) {
   return new Promise((resolve: any, reject: any) => {
     let user = data;
     let id = uuidv4();
-    const currentDate = new Date();
-    const formattedDate = `${currentDate.getFullYear()}-${
+    let currentDate = new Date();
+    let formattedDate = `${currentDate.getFullYear()}-${
       currentDate.getMonth() + 1
     }-${currentDate.getDate()}`;
 
@@ -38,6 +38,34 @@ function createrecord_dao(data: any) {
 function deleterecord_dao(id: any) {
   return new Promise((resolve: any, reject: any) => {
     let query = `DELETE FROM public."Mitigation" WHERE id='${id}'`;
+    client.query(query, (err: any, result: any) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(id);
+      }
+    });
+  });
+}
+
+function updatepremitigationscore_dao(id: any, data: any) {
+  return new Promise((resolve: any, reject: any) => {
+    let query = `UPDATE public."Mitigation"
+    SET "Pre-Mitigation-score" = ${data.Pre_Mitigation_score} WHERE id='${id}'`;
+    client.query(query, (err: any, result: any) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(id);
+      }
+    });
+  });
+}
+
+function updatepostmitigationscore_dao(id: any, data: any) {
+  return new Promise((resolve: any, reject: any) => {
+    let query = `UPDATE public."Mitigation"
+    SET "Post-Mitigation-score" = ${data.Post_Mitigation_score} WHERE id='${id}'`;
     client.query(query, (err: any, result: any) => {
       if (err) {
         reject(err);
@@ -80,4 +108,6 @@ export {
   deleterecord_dao,
   updatepremitigationavg_dao,
   updatepostmitigationavg_dao,
+  updatepremitigationscore_dao,
+  updatepostmitigationscore_dao,
 };
