@@ -16,7 +16,9 @@ async function gettable_controller(req: any, res: any) {
 async function createrecord_controller(req:any,res:any) {
     try{
         let id = await mitigationservice.createrecord_service(req.body);
-        res.send(`Data added successfully with id = ${id}`);
+        console.log(`Data added successfully with id = ${id}`);
+        let tabledata = await mitigationservice.gettable_service();
+        res.send(tabledata);
     }catch(err){
         console.log("Data addition failed !",err);
     }
@@ -24,12 +26,14 @@ async function createrecord_controller(req:any,res:any) {
 
 async function deleterecord_controller(req:any,res:any) {
     try{
-        let id = await mitigationservice.deleterecord_service(req.params.id);
-        res.send(`Data deletion successful with id = ${id}`);
+        let result = await mitigationservice.deleterecord_service(req.params.id);
+        res.send(result);
+        console.log(`Data deletion successful with id = ${req.params.id}`);
     }catch(err){
         console.log("Data deletion failed !",err);
     }
     
 }
+
 
 export { gettable_controller, createrecord_controller,deleterecord_controller };
