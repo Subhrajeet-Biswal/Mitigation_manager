@@ -35,7 +35,7 @@ function createrecord_dao(data: any) {
   });
 }
 
-function deleterecord_dao(id:any){
+function deleterecord_dao(id: any) {
   return new Promise((resolve: any, reject: any) => {
     let query = `DELETE FROM public."Mitigation" WHERE id='${id}'`;
     client.query(query, (err: any, result: any) => {
@@ -48,4 +48,36 @@ function deleterecord_dao(id:any){
   });
 }
 
-export { gettable_dao, createrecord_dao,deleterecord_dao };
+function updatepremitigationavg_dao() {
+  return new Promise((resolve: any, reject: any) => {
+    let query = `SELECT AVG("Pre-Mitigation-score") FROM public."Mitigation"`;
+    client.query(query, (err: any, result: any) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(result.rows[0].avg);
+      }
+    });
+  });
+}
+
+function updatepostmitigationavg_dao() {
+  return new Promise((resolve: any, reject: any) => {
+    let query = `SELECT AVG("Post-Mitigation-score") FROM public."Mitigation"`;
+    client.query(query, (err: any, result: any) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(result.rows[0].avg);
+      }
+    });
+  });
+}
+
+export {
+  gettable_dao,
+  createrecord_dao,
+  deleterecord_dao,
+  updatepremitigationavg_dao,
+  updatepostmitigationavg_dao,
+};

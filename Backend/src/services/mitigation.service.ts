@@ -3,17 +3,30 @@ import { json } from "stream/consumers";
 
 const mitigationdao = require("../dao/mitigation.dao");
 
-
 function gettable_service() {
-  return  mitigationdao.gettable_dao();
+  return mitigationdao.gettable_dao();
 }
 
-function createrecord_service(data:any){
-    return mitigationdao.createrecord_dao(data);
+function createrecord_service(data: any) {
+  return mitigationdao.createrecord_dao(data);
 }
 
-function deleterecord_service(id:any){
-    return mitigationdao.deleterecord_dao(id);
+function deleterecord_service(id: any) {
+  return mitigationdao.deleterecord_dao(id);
 }
 
-export { gettable_service,createrecord_service,deleterecord_service };
+function updatepremitigationavg_service() {
+  return mitigationdao.updatepremitigationavg_dao();
+}
+
+function updatepostmitigationavg_service() {
+  return mitigationdao.updatepostmitigationavg_dao();
+}
+
+export {
+  gettable_service,
+  createrecord_service,
+  deleterecord_service,
+  updatepremitigationavg_service,
+  updatepostmitigationavg_service,
+};
