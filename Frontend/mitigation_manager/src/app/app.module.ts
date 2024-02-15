@@ -13,6 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -26,6 +27,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatFormFieldModule,
     MatSelectModule,
     MatCheckboxModule,
+    FormsModule,
   ],
   providers: [ApiService],
   bootstrap: [AppComponent],
