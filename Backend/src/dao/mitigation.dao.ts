@@ -23,7 +23,7 @@ function createrecord_dao(data: any) {
       currentDate.getMonth() + 1
     }-${currentDate.getDate()}`;
 
-    let query = `INSERT INTO public."Mitigation"(id, "Description", "Pre-Mitigation-score", "Post-Mitigation-score", "Applied-on")
+    let query = `INSERT INTO public."Mitigation"(id, "Description", "Pre_Mitigation_score", "Post_Mitigation_score", "Applied_on")
                  values('${id}', '${user.Description}', ${user.Pre_Mitigation_score}, ${user.Post_Mitigation_score}, '${formattedDate}')`;
     client.query(query, (err: any, result: any) => {
       if (err) {
@@ -51,7 +51,7 @@ function deleterecord_dao(id: any) {
 function updatepremitigationscore_dao(id: any, data: any) {
   return new Promise((resolve: any, reject: any) => {
     let query = `UPDATE public."Mitigation"
-    SET "Pre-Mitigation-score" = ${data.Pre_Mitigation_score} WHERE id='${id}'`;
+    SET "Pre_Mitigation_score" = ${data.Pre_Mitigation_score} WHERE id='${id}'`;
     client.query(query, (err: any, result: any) => {
       if (err) {
         reject(err);
@@ -65,7 +65,7 @@ function updatepremitigationscore_dao(id: any, data: any) {
 function updatepostmitigationscore_dao(id: any, data: any) {
   return new Promise((resolve: any, reject: any) => {
     let query = `UPDATE public."Mitigation"
-    SET "Post-Mitigation-score" = ${data.Post_Mitigation_score} WHERE id='${id}'`;
+    SET "Post_Mitigation_score" = ${data.Post_Mitigation_score} WHERE id='${id}'`;
     client.query(query, (err: any, result: any) => {
       if (err) {
         reject(err);
@@ -78,7 +78,7 @@ function updatepostmitigationscore_dao(id: any, data: any) {
 
 function updatepremitigationavg_dao() {
   return new Promise((resolve: any, reject: any) => {
-    let query = `SELECT AVG("Pre-Mitigation-score") FROM public."Mitigation"`;
+    let query = `SELECT AVG("Pre_Mitigation_score") FROM public."Mitigation"`;
     client.query(query, (err: any, result: any) => {
       if (err) {
         reject(err);
@@ -91,7 +91,7 @@ function updatepremitigationavg_dao() {
 
 function updatepostmitigationavg_dao() {
   return new Promise((resolve: any, reject: any) => {
-    let query = `SELECT AVG("Post-Mitigation-score") FROM public."Mitigation"`;
+    let query = `SELECT AVG("Post_Mitigation_score") FROM public."Mitigation"`;
     client.query(query, (err: any, result: any) => {
       if (err) {
         reject(err);
