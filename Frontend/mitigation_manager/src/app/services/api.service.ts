@@ -11,9 +11,9 @@ export class ApiService {
     return this.http.get(`${this.apiurl}`);
   }
   updatePreMitigationScore(id:any,data:any){
-    return this.http.put(`${this.apiurl}/premitigation/25bc9c68-74ef-4a38-a72d-3b6aea2cada7`,data);
+    return this.http.put(`${this.apiurl}/premitigation/${id}`,data);
   }
   updatePostMitigationScore(id:any,data:any){
-    return this.http.put(`${this.apiurl}/postmitigation/25bc9c68-74ef-4a38-a72d-3b6aea2cada7`,data)
+    return this.http.put(`${this.apiurl}/postmitigation/${id}`,data)
   }
 }

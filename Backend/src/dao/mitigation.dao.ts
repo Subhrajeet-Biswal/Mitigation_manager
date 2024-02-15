@@ -49,8 +49,12 @@ function deleterecord_dao(id: any) {
 
 function updatepremitigationscore_dao(id: any, data: any) {
   return new Promise((resolve: any, reject: any) => {
+    let currentDate = new Date();
+    let formattedDate = `${currentDate.getDate()}/${
+      currentDate.getMonth() + 1
+    }/${currentDate.getFullYear()}`;
     let query = `UPDATE public."Mitigation"
-    SET "Pre_Mitigation_score" = ${data.Pre_Mitigation_score} WHERE id='${id}'`;
+    SET "Pre_Mitigation_score" = ${data.Pre_Mitigation_score},"Applied_on" = '${formattedDate}' WHERE id='${id}'`;
     client.query(query, (err: any, result: any) => {
       if (err) {
         reject(err);
@@ -63,8 +67,12 @@ function updatepremitigationscore_dao(id: any, data: any) {
 
 function updatepostmitigationscore_dao(id: any, data: any) {
   return new Promise((resolve: any, reject: any) => {
+    let currentDate = new Date();
+    let formattedDate = `${currentDate.getDate()}/${
+      currentDate.getMonth() + 1
+    }/${currentDate.getFullYear()}`;
     let query = `UPDATE public."Mitigation"
-    SET "Post_Mitigation_score" = ${data.Post_Mitigation_score} WHERE id='${id}'`;
+    SET "Post_Mitigation_score" = ${data.Post_Mitigation_score},"Applied_on" = '${formattedDate}' WHERE id='${id}'`;
     client.query(query, (err: any, result: any) => {
       if (err) {
         reject(err);
