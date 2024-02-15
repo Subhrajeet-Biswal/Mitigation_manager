@@ -15,7 +15,6 @@ async function gettable_controller(req: any, res: any) {
 async function createrecord_controller(req: any, res: any) {
   try {
     let id = await mitigationservice.createrecord_service(req.body);
-    console.log(`Data added successfully with id = ${id}`);
     let tabledata = await mitigationservice.gettable_service();
     let preMitigationAvgresult =
       await mitigationservice.updatepremitigationavg_service();
