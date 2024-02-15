@@ -19,10 +19,9 @@ function createrecord_dao(data: any) {
     let user = data;
     let id = uuidv4();
     let currentDate = new Date();
-    let formattedDate = `${currentDate.getFullYear()}-${
+    let formattedDate = `${currentDate.getDate()}/${
       currentDate.getMonth() + 1
-    }-${currentDate.getDate()}`;
-    console.log(formattedDate);
+    }/${currentDate.getFullYear()}`;
     let query = `INSERT INTO public."Mitigation"(id, "Description", "Pre_Mitigation_score", "Post_Mitigation_score", "Applied_on")
                  values('${id}', '${user.Description}', ${user.Pre_Mitigation_score}, ${user.Post_Mitigation_score}, '${formattedDate}')`;
     client.query(query, (err: any, result: any) => {
