@@ -1,0 +1,8 @@
+
+  .mat-header-cell {
+    text-align: center;
+    padding: 0 !important;
+    min-width: 100px;
+    max-width: 100px;
+    background-color: bisque;
+  }
