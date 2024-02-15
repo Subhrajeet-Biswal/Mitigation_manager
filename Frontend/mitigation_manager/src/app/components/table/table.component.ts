@@ -45,9 +45,13 @@ export class TableComponent {
     });
   }
   onPreMitigationScoreChange(id: any, event: any) {
-    console.log('premitigationchangecalled', id, event.value);
+    this.api.updatePreMitigationScore(id,{"Pre_Mitigation_score":event.value}).subscribe((res:any)=>{
+      console.log(res);
+    })
   }
   onPostMitigationScoreChange(id: any, event: any) {
-    console.log('postmitigationchangecalled', id, event.value);
+    this.api.updatePostMitigationScore(id,{"Post_Mitigation_score":event.value}).subscribe((res:any)=>{
+      console.log(res);
+    })
   }
 }
