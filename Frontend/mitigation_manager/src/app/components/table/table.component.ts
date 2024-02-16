@@ -41,17 +41,30 @@ export class TableComponent {
       for (let i = 0; i < res.length; i++) {
         this.isChecked.push(false);
       }
-      console.log(this.isChecked);
     });
   }
-  onPreMitigationScoreChange(id: any, event: any) {
-    this.api.updatePreMitigationScore(id,{"Pre_Mitigation_score":event.value}).subscribe((res:any)=>{
-      console.log(res);
-    })
+  onPreMitigationScoreChange(id: any, event: any, index: any) {
+    this.api
+      .updatePreMitigationScore(id, { Pre_Mitigation_score: event.value })
+      .subscribe((res: any) => {
+        console.log(res);
+      });
+    let currentDate = new Date();
+    let formattedDate = `${currentDate.getDate()}/${
+      currentDate.getMonth() + 1
+    }/${currentDate.getFullYear()}`;
+    this.dataSource[index].Applied_on = formattedDate;
   }
-  onPostMitigationScoreChange(id: any, event: any) {
-    this.api.updatePostMitigationScore(id,{"Post_Mitigation_score":event.value}).subscribe((res:any)=>{
-      console.log(res);
-    })
+  onPostMitigationScoreChange(id: any, event: any, index: any) {
+    this.api
+      .updatePostMitigationScore(id, { Post_Mitigation_score: event.value })
+      .subscribe((res: any) => {
+        console.log(res);
+      });
+    let currentDate = new Date();
+    let formattedDate = `${currentDate.getDate()}/${
+      currentDate.getMonth() + 1
+    }/${currentDate.getFullYear()}`;
+    this.dataSource[index].Applied_on = formattedDate;
   }
 }
