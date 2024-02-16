@@ -5,7 +5,13 @@ const mitigationdao = require("../dao/mitigation.dao");
 async function gettable_controller(req: any, res: any) {
   try {
     let tabledata = await mitigationservice.gettable_service();
-    if (tabledata) res.send(tabledata);
+    let preMitigationAvgresult =
+      await mitigationservice.updatepremitigationavg_service();
+    let preMitigationAvg = parseFloat(preMitigationAvgresult).toFixed(2);
+    let postMitigationAvgresult =
+      await mitigationservice.updatepostmitigationavg_service();
+    let postMitigationAvg = parseFloat(postMitigationAvgresult).toFixed(2);
+    if (tabledata) res.send({ tabledata, preMitigationAvg, postMitigationAvg });
     else res.send("Empty Data");
   } catch (err) {
     console.log("error while fetching data", err);
