@@ -37,7 +37,7 @@ export class TableComponent {
   ngOnInit(): void {
     this.api.getAllUser().subscribe((res: any) => {
       console.table(res);
-      this.dataSource = res;
+      this.dataSource = res.tabledata;
       for (let i = 0; i < res.length; i++) {
         this.isChecked.push(false);
       }
