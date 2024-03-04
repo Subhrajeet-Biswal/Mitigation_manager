@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
+import { AvgMitigationScoreComponent } from './components/avg-mitigation-score/avg-mitigation-score.component';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     TableComponent,
     MatFormFieldModule,
+    AvgMitigationScoreComponent,
     MatSelectModule,
     MatCheckboxModule,
     FormsModule,

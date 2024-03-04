@@ -6,6 +6,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
+import { AverageScoreService } from 'src/app/services/average-score.service';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -21,7 +22,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
 })
 export class TableComponent {
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private avg: AverageScoreService) {}
   public displayedColumns: string[] = [
     'select',
     'rowNumber',
@@ -33,11 +34,12 @@ export class TableComponent {
   public dataSource: any = [];
   numbers: number[] = [1, 2, 3, 4, 5];
   public isChecked: boolean[] = [];
-
   ngOnInit(): void {
     this.api.getAllUser().subscribe((res: any) => {
       console.table(res);
       this.dataSource = res.tabledata;
+      this.avg.updatePreMitigaitonScore(res.preMitigationAvg);
+      this.avg.updatePostMitigaitonScore(res.postMitigationAvg);
       for (let i = 0; i < res.length; i++) {
         this.isChecked.push(false);
       }
@@ -48,6 +50,7 @@ export class TableComponent {
       .updatePreMitigationScore(id, { Pre_Mitigation_score: event.value })
       .subscribe((res: any) => {
         console.log(res);
+        this.avg.updatePreMitigaitonScore(res.preMitigationAvg);
       });
     let currentDate = new Date();
     let formattedDate = `${currentDate.getDate()}/${
@@ -60,6 +63,7 @@ export class TableComponent {
       .updatePostMitigationScore(id, { Post_Mitigation_score: event.value })
       .subscribe((res: any) => {
         console.log(res);
+        this.avg.updatePostMitigaitonScore(res.postMitigationAvg);
       });
     let currentDate = new Date();
     let formattedDate = `${currentDate.getDate()}/${

@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  #bottom-bar {
+    background-color: #fff; /* Set the background color to white */
+    color: #333; /* Set the text color to a dark color for better visibility */
+    text-align: left; /* Align text to the left */
+    padding: 10px;
+  }
+
+  #container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the start (left) of the container */
+  }
+
+  #prefix-text {
+    margin-right: 10px;
+    color: rgb(113, 112, 112);
+  }
+
+  #detail1, #detail2, #detail3 {
+    margin-right: 10px;
+  }
+
+  
+
+  #detail2, #detail1 {
+    color: green; /* Set color for Average Post-Mitigation Score and Value 2 */
+  }
+
+  /* Set color for Value 1 and Value 2 */
+  .value {
+    color: black;
+  }
