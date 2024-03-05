@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { ApiService } from 'src/app/services/api.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
 import { AverageScoreService } from 'src/app/services/average-score.service';
+import { TabledataService } from 'src/app/services/tabledata.service';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -22,7 +23,11 @@ import { AverageScoreService } from 'src/app/services/average-score.service';
   standalone: true,
 })
 export class TableComponent {
-  constructor(private api: ApiService, private avg: AverageScoreService) {}
+  constructor(
+    private api: ApiService,
+    private avg: AverageScoreService,
+    private tableData: TabledataService
+  ) {}
   public displayedColumns: string[] = [
     'select',
     'rowNumber',
@@ -37,7 +42,8 @@ export class TableComponent {
   ngOnInit(): void {
     this.api.getAllUser().subscribe((res: any) => {
       console.table(res);
-      this.dataSource = res.tabledata;
+      this.tableData.updateTableData(res.tabledata);
+      this.tableData.currentdata.subscribe((data) => (this.dataSource = data));
       this.avg.updatePreMitigaitonScore(res.preMitigationAvg);
       this.avg.updatePostMitigaitonScore(res.postMitigationAvg);
       for (let i = 0; i < res.length; i++) {

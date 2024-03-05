@@ -1,0 +1,33 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.dialog {
+  width: 100%;
+  border: 5px solid black;
+  align-items: center;
+  justify-content: center;
+  /* border-color: black; */
+}
+.createform {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  color: black;
+  text-align: center;
+}
+.description {
+  width: 80%;
+}
+.button {
+  display: flex;
+  align-self: flex-end;
+  gap: 1em;
+  /* flex-direction: row; */
+}

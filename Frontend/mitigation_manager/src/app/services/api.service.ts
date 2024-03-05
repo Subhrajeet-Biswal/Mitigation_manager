@@ -10,10 +10,13 @@ export class ApiService {
   getAllUser() {
     return this.http.get(`${this.apiurl}`);
   }
-  updatePreMitigationScore(id:any,data:any){
-    return this.http.put(`${this.apiurl}/premitigation/${id}`,data);
+  updatePreMitigationScore(id: any, data: any) {
+    return this.http.put(`${this.apiurl}/premitigation/${id}`, data);
   }
-  updatePostMitigationScore(id:any,data:any){
-    return this.http.put(`${this.apiurl}/postmitigation/${id}`,data)
+  updatePostMitigationScore(id: any, data: any) {
+    return this.http.put(`${this.apiurl}/postmitigation/${id}`, data);
+  }
+  postMitigationData(data: any) {
+    return this.http.post(`${this.apiurl}`, data);
   }
 }
