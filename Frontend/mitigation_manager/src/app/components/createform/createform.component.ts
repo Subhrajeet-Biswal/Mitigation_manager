@@ -38,6 +38,7 @@ export class CreateformComponent {
       this.tableData.updateTableData(res.tabledata);
       this.avg.updatePreMitigaitonScore(res.preMitigationAvg);
       this.avg.updatePostMitigaitonScore(res.postMitigationAvg);
+      this.dialogue.closeAll();
     });
   }
   closeDialogue() {
