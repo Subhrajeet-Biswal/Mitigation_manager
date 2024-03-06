@@ -5,7 +5,11 @@
   background: white;
   color: black;
 }
-.button {
+.createbutton:enabled {
   margin: 10px;
   color: green;
+}
+.createbutton:disabled {
+  margin: 10px;
+  color: lightgray;
 }

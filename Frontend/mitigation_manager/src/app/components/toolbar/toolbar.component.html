@@ -1,6 +1,20 @@
 <mat-toolbar class="mat-toolbar">
-    <span>Mitigation Manager</span>
-    <span class="example-spacer"></span>
-    <button mat-stroked-button  style="color: green;" class="button" [disabled]="!enableCreate" (click)="openCreateForm()">Create</button>
-    <button mat-stroked-button color="warn" [disabled]="!enableDelete" (click)="openConfirmation()">Delete</button>
+  <span>Mitigation Manager</span>
+  <span class="example-spacer"></span>
+  <button
+    mat-stroked-button
+    class="createbutton"
+    [disabled]="!enableCreate"
+    (click)="openCreateForm()"
+  >
+    Create
+  </button>
+  <button
+    mat-stroked-button
+    color="warn"
+    [disabled]="!enableDelete"
+    (click)="openConfirmation()"
+  >
+    Delete
+  </button>
 </mat-toolbar>
