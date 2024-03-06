@@ -8,6 +8,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
 import { AverageScoreService } from 'src/app/services/average-score.service';
 import { TabledataService } from 'src/app/services/tabledata.service';
+import { ToolbarComponent } from '../toolbar/toolbar.component';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -19,14 +20,17 @@ import { TabledataService } from 'src/app/services/tabledata.service';
     CommonModule,
     MatCheckboxModule,
     FormsModule,
+    ToolbarComponent
   ],
+  providers:[ToolbarComponent],
   standalone: true,
 })
 export class TableComponent {
   constructor(
     private api: ApiService,
     private avg: AverageScoreService,
-    private tableData: TabledataService
+    private tableData: TabledataService,
+    private toolbar: ToolbarComponent
   ) {}
   public displayedColumns: string[] = [
     'select',
@@ -44,9 +48,10 @@ export class TableComponent {
       console.table(res);
       this.tableData.updateTableData(res.tabledata);
       this.tableData.currentdata.subscribe((data) => (this.dataSource = data));
+      this.tableData.currentchecklist.subscribe((checklist)=>{this.isChecked = checklist});
       this.avg.updatePreMitigaitonScore(res.preMitigationAvg);
       this.avg.updatePostMitigaitonScore(res.postMitigationAvg);
-      for (let i = 0; i < res.length; i++) {
+      for (let i = 0; i < res.tabledata.length; i++) {
         this.isChecked.push(false);
       }
     });
@@ -77,4 +82,16 @@ export class TableComponent {
     }/${currentDate.getFullYear()}`;
     this.dataSource[index].Applied_on = formattedDate;
   }
+  deleteEnable:boolean=false;
+  onSelectionChange(){
+    console.log('selectionchanged');
+    console.log(this.isChecked);
+    let flag:boolean=false;
+    for(let i=0;i<this.isChecked.length;i++)
+    {
+      flag=flag||this.isChecked[i];
+    }
+    this.deleteEnable=flag;
+  }
+  
 }

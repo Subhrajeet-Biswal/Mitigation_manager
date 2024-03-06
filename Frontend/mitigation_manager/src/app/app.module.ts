@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { AvgMitigationScoreComponent } from './components/avg-mitigation-score/avg-mitigation-score.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { CreateformComponent } from './components/createform/createform.component';
+import { ConfirmdeleteComponent } from './components/confirmdelete/confirmdelete.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +33,7 @@ import { CreateformComponent } from './components/createform/createform.componen
     AvgMitigationScoreComponent,
     ToolbarComponent,
     CreateformComponent,
+    ConfirmdeleteComponent,
     MatSelectModule,
     MatCheckboxModule,
     FormsModule,

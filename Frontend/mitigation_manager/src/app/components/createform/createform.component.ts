@@ -1,5 +1,9 @@
 import { Component, Output } from '@angular/core';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import {
+  MatDialog,
+  MatDialogModule,
+  MatDialogRef,
+} from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -30,7 +34,8 @@ export class CreateformComponent {
     private api: ApiService,
     private avg: AverageScoreService,
     private tableData: TabledataService,
-    private dialogue: MatDialog
+    private dialogue: MatDialog,
+    public dialogRef: MatDialogRef<CreateformComponent>
   ) {}
   addMitigation(data: any) {
     this.api.postMitigationData(data).subscribe((res: any) => {
@@ -38,10 +43,10 @@ export class CreateformComponent {
       this.tableData.updateTableData(res.tabledata);
       this.avg.updatePreMitigaitonScore(res.preMitigationAvg);
       this.avg.updatePostMitigaitonScore(res.postMitigationAvg);
-      this.dialogue.closeAll();
+      this.dialogRef.close(true);
     });
   }
   closeDialogue() {
-    this.dialogue.closeAll();
+    this.dialogRef.close(false);
   }
 }

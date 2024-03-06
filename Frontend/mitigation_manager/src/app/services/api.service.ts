@@ -19,4 +19,7 @@ export class ApiService {
   postMitigationData(data: any) {
     return this.http.post(`${this.apiurl}`, data);
   }
+  deleteMitigationData(id: any) {
+    return this.http.delete(`${this.apiurl}/${id}`);
+  }
 }
