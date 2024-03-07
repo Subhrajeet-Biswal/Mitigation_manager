@@ -1,8 +1,33 @@
-
-  .mat-header-cell {
-    text-align: center;
-    padding: 0 !important;
-    min-width: 100px;
-    max-width: 100px;
-    background-color: bisque;
-  }
+.mat-header-cell {
+  color: #121212;
+  font-weight: 500;
+  text-align: center;
+  padding: 0 !important;
+  min-width: 100px;
+  max-width: 100px;
+}
+.mat-cell,.mat-header-cell{
+  border-right: 1px solid #CED7D4;
+}
+.mat-elevation-z8{
+  border: 1px solid #CED7D4;
+}
+.mat-mdc-header-row {
+  background-color: #EBEFEE;
+}
+tr.mat-row {
+  border: 1px solid #faff00;
+}
+::ng-deep
+  .mat-mdc-checkbox.mat-accent
+  .mdc-checkbox--selected
+  ~ .mdc-checkbox__ripple {
+  background-color: #02A783 !important;
+  background: #02A783;
+}
+::ng-deep .mat-mdc-checkbox.mat-accent {
+  --mdc-checkbox-selected-focus-icon-color: #02A783;
+  --mdc-checkbox-selected-icon-color: #02A783;
+  --mdc-checkbox-selected-hover-icon-color: #02A783;
+  --mdc-checkbox-selected-pressed-icon-color: #02A783;
+}

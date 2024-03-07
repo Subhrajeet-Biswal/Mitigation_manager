@@ -1,8 +1,24 @@
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <ng-container matColumnDef="select">
     <th mat-header-cell *matHeaderCellDef class="mat-header-cell">Select</th>
-    <td mat-cell *matCellDef="let element; let i = index">
-      <mat-checkbox #checkBox [(ngModel)]="isChecked[i]" (change)="onSelectionChange()"></mat-checkbox>
+    <td
+      style="
+        text-align: center;
+        color: #121212;
+        font-family: poppins;
+        font-weight: 600;
+      "
+      mat-cell
+      *matCellDef="let element; let i = index"
+      class="mat-cell"
+    >
+      <mat-checkbox
+        class="custom-checkbox"
+        style="stroke: green"
+        #checkBox
+        [(ngModel)]="isChecked[i]"
+        (change)="onSelectionChange()"
+      ></mat-checkbox>
     </td>
   </ng-container>
 
@@ -14,8 +30,9 @@
       style="text-align: center"
       mat-cell
       *matCellDef="let element; let i = index"
+      class="mat-cell"
     >
-      {{ i + 1 }}
+      #{{ i + 1 }}
     </td>
   </ng-container>
 
@@ -23,14 +40,26 @@
     <th mat-header-cell *matHeaderCellDef class="mat-header-cell">
       Description
     </th>
-    <td mat-cell *matCellDef="let element">{{ element.Description }}</td>
+    <td
+      style="text-align: center; font-family: Noto Sans; font-weight: 400"
+      mat-cell
+      *matCellDef="let element"
+      class="mat-cell"
+    >
+      {{ element.Description }}
+    </td>
   </ng-container>
 
   <ng-container matColumnDef="Pre_Mitigation_score">
     <th mat-header-cell *matHeaderCellDef class="mat-header-cell">
       Pre-Mitigation Score
     </th>
-    <td mat-cell *matCellDef="let element; let i = index">
+    <td
+      style="text-align: center;font-family: Noto Sans; font-weight: 500"
+      mat-cell
+      *matCellDef="let element; let i = index"
+      class="mat-cell"
+    >
       <mat-form-field>
         <mat-select
           [disabled]="!isChecked[i]"
@@ -50,7 +79,12 @@
     <th mat-header-cell *matHeaderCellDef class="mat-header-cell">
       Post-Mitigation Score
     </th>
-    <td mat-cell *matCellDef="let element; let i = index">
+    <td
+      style="text-align: center;font-family: Noto Sans; font-weight: 500"
+      mat-cell
+      *matCellDef="let element; let i = index"
+      class="mat-cell"
+    >
       <mat-form-field>
         <mat-select
           [disabled]="!isChecked[i]"
@@ -70,7 +104,17 @@
     <th mat-header-cell *matHeaderCellDef class="mat-header-cell">
       Applied On
     </th>
-    <td style="text-align: center" mat-cell *matCellDef="let element">
+    <td
+      style="
+        text-align: center;
+        color: #595959;
+        font-family: Noto Sans;
+        font-weight: 400;
+      "
+      mat-cell
+      *matCellDef="let element"
+      class="mat-cell"
+    >
       {{ element.Applied_on }}
     </td>
   </ng-container>

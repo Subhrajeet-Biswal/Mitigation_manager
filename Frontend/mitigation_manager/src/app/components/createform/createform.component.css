@@ -6,10 +6,15 @@
 
 .dialog {
   width: 100%;
-  border: 5px solid black;
+  /* border: 5px solid black; */
   align-items: center;
   justify-content: center;
-  /* border-color: black; */
+
+  border: 2px solid green;
+  border-radius: 4px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .createform {
   display: flex;

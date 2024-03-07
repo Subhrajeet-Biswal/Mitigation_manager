@@ -19,7 +19,7 @@ body {
 
   #prefix-text {
     margin-right: 10px;
-    color: rgb(113, 112, 112);
+    color: #595959;
   }
 
   #detail1, #detail2, #detail3 {
@@ -29,10 +29,11 @@ body {
   
 
   #detail2, #detail1 {
-    color: green; /* Set color for Average Post-Mitigation Score and Value 2 */
+    color: #02A783; /* Set color for Average Post-Mitigation Score and Value 2 */
   }
 
   /* Set color for Value 1 and Value 2 */
   .value {
-    color: black;
+    color: #121212;
+    font-weight: 600;
   }
