@@ -2,19 +2,12 @@
   <ng-container matColumnDef="select">
     <th mat-header-cell *matHeaderCellDef class="mat-header-cell">Select</th>
     <td
-      style="
-        text-align: center;
-        color: #121212;
-        font-family: poppins;
-        font-weight: 600;
-      "
+      style="text-align: center"
       mat-cell
       *matCellDef="let element; let i = index"
       class="mat-cell"
     >
       <mat-checkbox
-        class="custom-checkbox"
-        style="stroke: green"
         #checkBox
         [(ngModel)]="isChecked[i]"
         (change)="onSelectionChange()"
@@ -27,7 +20,12 @@
       #Mitigation
     </th>
     <td
-      style="text-align: center"
+      style="
+        text-align: center;
+        color: #121212;
+        font-family: poppins;
+        font-weight: 600;
+      "
       mat-cell
       *matCellDef="let element; let i = index"
       class="mat-cell"
@@ -43,6 +41,7 @@
     <td
       style="text-align: center; font-family: Noto Sans; font-weight: 400"
       mat-cell
+      [ngClass]="'description'"
       *matCellDef="let element"
       class="mat-cell"
     >
@@ -55,19 +54,23 @@
       Pre-Mitigation Score
     </th>
     <td
-      style="text-align: center;font-family: Noto Sans; font-weight: 500"
+      style="align-content: center; font-family: Noto Sans; font-weight: 500"
       mat-cell
       *matCellDef="let element; let i = index"
       class="mat-cell"
     >
-      <mat-form-field>
+      <mat-form-field class="custom-select">
         <mat-select
           [disabled]="!isChecked[i]"
           placeholder="SELECT"
           [(value)]="element.Pre_Mitigation_score"
           (selectionChange)="onPreMitigationScoreChange(element.id, $event, i)"
         >
-          <mat-option *ngFor="let number of numbers" [value]="number">
+          <mat-option
+            class="custom-select"
+            *ngFor="let number of numbers"
+            [value]="number"
+          >
             {{ number }}
           </mat-option>
         </mat-select>
@@ -80,19 +83,25 @@
       Post-Mitigation Score
     </th>
     <td
-      style="text-align: center;font-family: Noto Sans; font-weight: 500"
+      style="text-align: center; font-family: Noto Sans; font-weight: 500"
       mat-cell
       *matCellDef="let element; let i = index"
       class="mat-cell"
     >
-      <mat-form-field>
+      <mat-form-field class="custom-select">
         <mat-select
+          class="mat-select"
+          color="green"
           [disabled]="!isChecked[i]"
           placeholder="SELECT"
           [(value)]="element.Post_Mitigation_score"
           (selectionChange)="onPostMitigationScoreChange(element.id, $event, i)"
         >
-          <mat-option *ngFor="let number of numbers" [value]="number">
+          <mat-option
+            class="custom-select"
+            *ngFor="let number of numbers"
+            [value]="number"
+          >
             {{ number }}
           </mat-option>
         </mat-select>

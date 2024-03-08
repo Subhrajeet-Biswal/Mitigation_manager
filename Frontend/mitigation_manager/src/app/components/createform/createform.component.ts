@@ -38,6 +38,13 @@ export class CreateformComponent {
     public dialogRef: MatDialogRef<CreateformComponent>
   ) {}
   addMitigation(data: any) {
+    console.log('addmitigation called');
+    let validDescription = /[a-zA-Z]/.test(data.Description);
+    console.log(validDescription);
+    if (!validDescription) {
+      alert('Enter a valid Description');
+      return;
+    }
     this.api.postMitigationData(data).subscribe((res: any) => {
       console.log(res);
       this.tableData.updateTableData(res.tabledata);

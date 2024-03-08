@@ -11,11 +11,9 @@ export class ButtonenableService {
   currentEnableDelete = this.enableDelete.asObservable();
   constructor() {}
   updateEnableCreate(flag: any) {
-    console.log('create', flag);
     this.enableCreate.next(flag);
   }
   updateEnableDelete(flag: any) {
-    console.log('delete', flag);
     this.enableDelete.next(flag);
   }
 }

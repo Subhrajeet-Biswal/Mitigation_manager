@@ -85,8 +85,6 @@ export class TableComponent {
     this.dataSource[index].Applied_on = formattedDate;
   }
   onSelectionChange() {
-    console.log('selectionchanged');
-    console.log(this.isChecked);
     let flag: boolean = false;
     for (let i = 0; i < this.isChecked.length; i++) {
       flag = flag || this.isChecked[i];

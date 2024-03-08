@@ -36,3 +36,30 @@
   gap: 1em;
   /* flex-direction: row; */
 }
+.submitbutton {
+  background-color: #02a783;
+  color: white;
+}
+.submitbutton:hover {
+  background-color: #00896c;
+}
+.cancelbutton {
+  background-color: #e50012;
+  color: white;
+}
+.cancelbutton:hover {
+  background-color: #cf2333;
+}
+.custom-select {
+  --mat-select-focused-arrow-color: #02a783;
+  --mdc-filled-text-field-focus-active-indicator-color: #02a783 !important;
+  --mat-option-selected-state-label-text-color: #02a783 !important;
+  --mdc-filled-text-field-focus-label-text-color: #02a783;
+}
+::ng-deep
+  .mat-primary
+  .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-minimal::after,
+.mat-primary
+  .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-minimal::after {
+  color: #02a783;
+}

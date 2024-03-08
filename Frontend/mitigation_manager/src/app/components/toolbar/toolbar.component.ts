@@ -43,7 +43,6 @@ export class ToolbarComponent implements OnInit {
   }
 
   openCreateForm() {
-    console.log(this.checkList);
     let iscreated = this.dialogue.open(CreateformComponent, {
       width: '500px',
     });

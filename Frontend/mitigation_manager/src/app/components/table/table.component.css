@@ -1,20 +1,38 @@
+.mat-cell,
 .mat-header-cell {
-  color: #121212;
-  font-weight: 500;
   text-align: center;
-  padding: 0 !important;
-  min-width: 100px;
-  max-width: 100px;
+  border-right: 1px solid #ced7d4;
 }
-.mat-cell,.mat-header-cell{
-  border-right: 1px solid #CED7D4;
-}
-.mat-elevation-z8{
-  border: 1px solid #CED7D4;
+.mat-elevation-z8 {
+  border: 1px solid #ced7d4;
 }
 .mat-mdc-header-row {
-  background-color: #EBEFEE;
+  background-color: #ebefee;
 }
+.mat-mdc-form-field {
+  height: 80%;
+  width: 60%;
+  margin-top: 10%;
+}
+.mat-select {
+  align-self: center;
+}
+.description {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 28% !important;
+  width: 28% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
 tr.mat-row {
   border: 1px solid #faff00;
 }
@@ -22,12 +40,25 @@ tr.mat-row {
   .mat-mdc-checkbox.mat-accent
   .mdc-checkbox--selected
   ~ .mdc-checkbox__ripple {
-  background-color: #02A783 !important;
-  background: #02A783;
+  background-color: #02a783 !important;
+  background: #02a783;
 }
 ::ng-deep .mat-mdc-checkbox.mat-accent {
-  --mdc-checkbox-selected-focus-icon-color: #02A783;
-  --mdc-checkbox-selected-icon-color: #02A783;
-  --mdc-checkbox-selected-hover-icon-color: #02A783;
-  --mdc-checkbox-selected-pressed-icon-color: #02A783;
+  --mdc-checkbox-selected-focus-icon-color: #02a783;
+  --mdc-checkbox-selected-icon-color: #02a783;
+  --mdc-checkbox-selected-hover-icon-color: #02a783;
+  --mdc-checkbox-selected-pressed-icon-color: #02a783;
+}
+
+.custom-select {
+  --mat-select-focused-arrow-color: #02a783;
+  --mdc-filled-text-field-focus-active-indicator-color: #02a783 !important;
+  --mat-option-selected-state-label-text-color: #02a783 !important;
+}
+::ng-deep
+  .mat-primary
+  .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-minimal::after,
+.mat-primary
+  .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-minimal::after {
+  color: #02a783;
 }

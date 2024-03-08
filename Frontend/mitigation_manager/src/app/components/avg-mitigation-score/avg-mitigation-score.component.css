@@ -1,39 +1,48 @@
+/* body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+} */
+
+#bottom-bar {
+  background-color: #fff; /* Set the background color to white */
+  color: #333; /* Set the text color to a dark color for better visibility */
+  text-align: left; /* Align text to the left */
+  padding: 60px 0px 0px 0px;
+}
+
+#container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the start (left) of the container */
+  border-top: 1px solid #ced7d4;
+  padding: 10px;
+}
+
+#prefix-text {
+  margin-right: 10px;
+  color: #595959;
+}
+
+#detail1,
+#detail2,
+#detail3 {
+  margin-right: 10px;
+}
+
+#detail2,
+#detail1 {
+  color: #02a783; /* Set color for Average Post-Mitigation Score and Value 2 */
+}
+
+/* Set color for Value 1 and Value 2 */
+.value {
+  color: #121212;
+  font-weight: 600;
+}
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-
-  #bottom-bar {
-    background-color: #fff; /* Set the background color to white */
-    color: #333; /* Set the text color to a dark color for better visibility */
-    text-align: left; /* Align text to the left */
-    padding: 10px;
-  }
-
-  #container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Align items to the start (left) of the container */
-  }
-
-  #prefix-text {
-    margin-right: 10px;
-    color: #595959;
-  }
-
-  #detail1, #detail2, #detail3 {
-    margin-right: 10px;
-  }
-
-  
-
-  #detail2, #detail1 {
-    color: #02A783; /* Set color for Average Post-Mitigation Score and Value 2 */
-  }
-
-  /* Set color for Value 1 and Value 2 */
-  .value {
-    color: #121212;
-    font-weight: 600;
-  }
+  border-top: 1px solid #ced7d4;
+  font-family: Arial, sans-serif;
+}
