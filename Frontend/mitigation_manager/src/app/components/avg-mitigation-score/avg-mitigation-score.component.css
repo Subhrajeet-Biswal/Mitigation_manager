@@ -1,11 +1,14 @@
-/* body {
+body {
+  display: block;
   width: 100%;
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-} */
+}
 
 #bottom-bar {
+  display: block;
+  width: 100%;
   background-color: #fff; /* Set the background color to white */
   color: #333; /* Set the text color to a dark color for better visibility */
   text-align: left; /* Align text to the left */
@@ -13,19 +16,22 @@
 }
 
 #container {
-  width: 100%;
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: flex-start; /* Align items to the start (left) of the container */
   border-top: 1px solid #ced7d4;
-  padding: 10px;
+  border-bottom: 1px solid #ced7d4;
+  padding: 15px;
 }
 
 #prefix-text {
   margin-right: 10px;
   color: #595959;
 }
-
+#detail1{
+  margin-left: 15px;
+}
 #detail1,
 #detail2,
 #detail3 {

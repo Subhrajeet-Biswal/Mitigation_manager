@@ -30,6 +30,9 @@
 .description {
   width: 80%;
 }
+.mat-select {
+  align-self: center;
+}
 .button {
   display: flex;
   align-self: flex-end;

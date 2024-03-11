@@ -1,6 +1,6 @@
 .dialog {
   width: 100%;
-  border: 5px solid black;
+  border: 1px solid #02a783;
   align-items: center;
   justify-content: center;
   /* border-color: black; */

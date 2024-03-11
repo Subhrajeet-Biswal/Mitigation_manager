@@ -1,8 +1,7 @@
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <ng-container matColumnDef="select">
-    <th mat-header-cell *matHeaderCellDef class="mat-header-cell">Select</th>
+    <th mat-header-cell *matHeaderCellDef class="mat-header-cell"></th>
     <td
-      style="text-align: center"
       mat-cell
       *matCellDef="let element; let i = index"
       class="mat-cell"
@@ -39,7 +38,7 @@
       Description
     </th>
     <td
-      style="text-align: center; font-family: Noto Sans; font-weight: 400"
+      style="text-align: center; font-family: 'Poppins'; font-weight: 400"
       mat-cell
       [ngClass]="'description'"
       *matCellDef="let element"
@@ -54,13 +53,15 @@
       Pre-Mitigation Score
     </th>
     <td
-      style="align-content: center; font-family: Noto Sans; font-weight: 500"
+      style="align-content: center; font-family: 'Poppins'; font-weight: 500"
       mat-cell
       *matCellDef="let element; let i = index"
       class="mat-cell"
     >
-      <mat-form-field class="custom-select">
+      <mat-form-field class="my-form-field custom-select" appearance="outline">
         <mat-select
+        class="mat-select"
+        color="green"
           [disabled]="!isChecked[i]"
           placeholder="SELECT"
           [(value)]="element.Pre_Mitigation_score"
@@ -83,12 +84,12 @@
       Post-Mitigation Score
     </th>
     <td
-      style="text-align: center; font-family: Noto Sans; font-weight: 500"
+      style="align-content: center; font-family: 'Poppins'; font-weight: 500"
       mat-cell
       *matCellDef="let element; let i = index"
       class="mat-cell"
     >
-      <mat-form-field class="custom-select">
+      <mat-form-field class="my-form-field custom-select" appearance="outline">
         <mat-select
           class="mat-select"
           color="green"
@@ -117,7 +118,7 @@
       style="
         text-align: center;
         color: #595959;
-        font-family: Noto Sans;
+        font-family: 'Poppins';
         font-weight: 400;
       "
       mat-cell

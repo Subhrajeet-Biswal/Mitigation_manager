@@ -1,3 +1,11 @@
+body {
+  margin-left: 1%;
+  margin-right: 1%;
+}
+table {
+  /* width: 100%; */
+  table-layout: fixed;
+}
 .mat-cell,
 .mat-header-cell {
   text-align: center;
@@ -11,11 +19,13 @@
 }
 .mat-mdc-form-field {
   height: 80%;
-  width: 60%;
-  margin-top: 10%;
+  width: 100%;
+  margin: 1px 0;
 }
-.mat-select {
-  align-self: center;
+.my-form-field {
+  .mat-mdc-form-field-subscript-wrapper {
+    position: absolute;
+  }
 }
 .description {
   word-wrap: break-word !important;
@@ -54,6 +64,7 @@ tr.mat-row {
   --mat-select-focused-arrow-color: #02a783;
   --mdc-filled-text-field-focus-active-indicator-color: #02a783 !important;
   --mat-option-selected-state-label-text-color: #02a783 !important;
+  --mdc-outlined-text-field-focus-outline-color: #02a783;
 }
 ::ng-deep
   .mat-primary
@@ -61,4 +72,25 @@ tr.mat-row {
 .mat-primary
   .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-minimal::after {
   color: #02a783;
+}
+
+.mat-column-Description {
+  max-width: 65px;
+  /* background: #000; */
+
+  line-height: normal;
+}
+.mat-column-select {
+  max-width: 30px;
+}
+.mat-column-Pre_Mitigation_score,
+.mat-column-Post_Mitigation_score {
+  padding: 0;
+}
+.mat-column-rowNumber{
+  max-width: 40px;
+}
+.mat-mdc-form-field-type-mat-select:not(.mat-form-field-disabled)
+  .mat-mdc-text-field-wrapper {
+  cursor: crosshair;
 }
