@@ -9,6 +9,8 @@ export class TabledataService {
   currentdata = this.tableData.asObservable();
   private checklist = new BehaviorSubject<any>([]);
   currentchecklist = this.checklist.asObservable();
+  private allChecked = new BehaviorSubject<any>(false);
+  currentallChecked = this.allChecked.asObservable();
   constructor() {}
   updateTableData(data: any) {
     this.tableData.next(data);
@@ -19,6 +21,7 @@ export class TabledataService {
       return item.id !== id;
     });
     this.tableData.next(filteredData);
+    this.allChecked.next(false);
   }
   updateChecklistonCreaterecord() {
     let currentlist = this.checklist.value;
@@ -30,6 +33,11 @@ export class TabledataService {
     currentlist = currentlist.filter((item: any) => {
       return item === false;
     });
+    this.checklist.next(currentlist);
+  }
+  handleAllCheck(flag: boolean) {
+    let currentlist = this.checklist.value;
+    currentlist.fill(flag);
     this.checklist.next(currentlist);
   }
 }

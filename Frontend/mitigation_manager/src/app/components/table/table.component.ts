@@ -43,13 +43,19 @@ export class TableComponent {
   public dataSource: any = [];
   numbers: number[] = [1, 2, 3, 4, 5];
   public isChecked: boolean[] = [];
+  public allChecked: boolean = false;
   ngOnInit(): void {
     this.api.getAllUser().subscribe((res: any) => {
       console.table(res);
       this.tableData.updateTableData(res.tabledata);
-      this.tableData.currentdata.subscribe((data) => (this.dataSource = data));
+      this.tableData.currentdata.subscribe((data) => {
+        this.dataSource = data;
+      });
       this.tableData.currentchecklist.subscribe((checklist) => {
         this.isChecked = checklist;
+      });
+      this.tableData.currentallChecked.subscribe((flag) => {
+        this.allChecked = flag;
       });
       this.avg.updatePreMitigaitonScore(res.preMitigationAvg);
       this.avg.updatePostMitigaitonScore(res.postMitigationAvg);
@@ -91,5 +97,9 @@ export class TableComponent {
     }
     this.enable.updateEnableCreate(!flag);
     this.enable.updateEnableDelete(flag);
+  }
+  allSelect() {
+    this.tableData.handleAllCheck(this.allChecked);
+    this.onSelectionChange();
   }
 }

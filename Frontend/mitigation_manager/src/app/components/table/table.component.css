@@ -81,14 +81,14 @@ tr.mat-row {
   line-height: normal;
 }
 .mat-column-select {
-  max-width: 30px;
+  width: max-content;
 }
 .mat-column-Pre_Mitigation_score,
 .mat-column-Post_Mitigation_score {
   padding: 0;
 }
 .mat-column-rowNumber{
-  max-width: 40px;
+  width: max-content;
 }
 .mat-mdc-form-field-type-mat-select:not(.mat-form-field-disabled)
   .mat-mdc-text-field-wrapper {
