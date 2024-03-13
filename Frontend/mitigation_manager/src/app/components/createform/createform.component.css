@@ -40,14 +40,14 @@
   /* flex-direction: row; */
 }
 .submitbutton {
-  background-color: #02a783;
+  background-color: #147d64;
   color: white;
 }
 .submitbutton:hover {
-  background-color: #00896c;
+  background-color: #0f5f4c;
 }
 .cancelbutton {
-  background-color: #e50012;
+  background-color: #e12d39;
   color: white;
 }
 .cancelbutton:hover {
@@ -59,10 +59,18 @@
   --mat-option-selected-state-label-text-color: #02a783 !important;
   --mdc-filled-text-field-focus-label-text-color: #02a783;
 }
-::ng-deep
-  .mat-primary
-  .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-minimal::after,
-.mat-primary
-  .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-minimal::after {
-  color: #02a783;
+
+.mitigationscore {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+
+  .custom-select {
+    width: 45%;
+    --mat-select-focused-arrow-color: #02a783;
+    --mdc-filled-text-field-focus-active-indicator-color: #02a783 !important;
+    --mat-option-selected-state-label-text-color: #02a783 !important;
+    --mdc-outlined-text-field-focus-outline-color: #02a783;
+    --mdc-outlined-text-field-focus-label-text-color: #02a783;
+  }
 }

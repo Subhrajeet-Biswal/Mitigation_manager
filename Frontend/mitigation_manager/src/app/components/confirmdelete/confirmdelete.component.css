@@ -1,6 +1,5 @@
 .dialog {
   width: 100%;
-  border: 1px solid #02a783;
   align-items: center;
   justify-content: center;
   /* border-color: black; */
@@ -23,4 +22,11 @@
 
 .mat-dialog-actions button {
   margin-left: 10px;
+}
+.confirmbutton {
+  background-color: #e12d39;
+  color: white;
+}
+.confirmbutton:hover {
+  background-color: #cf2333;
 }

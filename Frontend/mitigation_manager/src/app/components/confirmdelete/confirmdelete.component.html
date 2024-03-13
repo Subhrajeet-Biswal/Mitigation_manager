@@ -1,5 +1,7 @@
 <mat-dialog-actions class="dialog">
-   <p>Are you sure you want to delete this element?</p>
-  <button mat-raised-button color="warn" (click)="confirm()">Confirm</button>
+  <p>Are you sure you want to delete the selected element(s)?</p>
+  <button mat-raised-button class="confirmbutton" (click)="confirm()">
+    Confirm
+  </button>
   <button mat-raised-button (click)="cancel()">Cancel</button>
 </mat-dialog-actions>

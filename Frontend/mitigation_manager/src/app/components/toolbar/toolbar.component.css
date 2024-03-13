@@ -4,15 +4,31 @@
 .mat-toolbar {
   background: white;
   color: black;
+  justify-content: space-between;
 }
 .createbutton:enabled {
   margin: 10px;
-  color: #02a873;
+  background-color: #147d64;
+  color: white;
+}
+.createbutton:enabled:hover {
+  background-color: #0f5f4c;
 }
 .createbutton:disabled {
   margin: 10px;
-  color: lightgray;
+  background-color: white;
+  color: gray;
 }
 .deletebutton:enabled {
-  color: #e50012;
+  background-color: #e12d39;
+  color: white;
+}
+.deletebutton:enabled:hover {
+  background-color: #cf2333;
+}
+.body {
+  justify-content: space-between;
+}
+.buttons {
+  justify-self: flex-end;
 }

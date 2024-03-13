@@ -9,30 +9,32 @@
       <mat-label>Description</mat-label>
       <textarea matInput ngModel required name="Description"></textarea>
     </mat-form-field>
-    <mat-form-field class="custom-select">
-      <mat-label>Pre-Mitigation-Score</mat-label>
-      <mat-select ngModel required name="Pre_Mitigation_score">
-        <mat-option
-          class="custom-select"
-          *ngFor="let number of numbers"
-          [value]="number"
-        >
-          {{ number }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field class="custom-select">
-      <mat-label>Post-Mitigation-Score</mat-label>
-      <mat-select ngModel required name="Post_Mitigation_score">
-        <mat-option
-          class="custom-select"
-          *ngFor="let number of numbers"
-          [value]="number"
-        >
-          {{ number }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+    <div class="mitigationscore">
+      <mat-form-field class="custom-select" appearance="outline">
+        <mat-label>Pre-Mitigation-Score</mat-label>
+        <mat-select ngModel required name="Pre_Mitigation_score">
+          <mat-option
+            class="custom-select"
+            *ngFor="let number of numbers"
+            [value]="number"
+          >
+            {{ number }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="custom-select" appearance="outline">
+        <mat-label>Post-Mitigation-Score</mat-label>
+        <mat-select ngModel required name="Post_Mitigation_score">
+          <mat-option
+            class="custom-select"
+            *ngFor="let number of numbers"
+            [value]="number"
+          >
+            {{ number }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
     <div class="button">
       <button
         mat-raised-button

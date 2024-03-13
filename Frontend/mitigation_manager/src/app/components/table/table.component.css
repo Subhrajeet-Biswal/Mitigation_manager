@@ -4,48 +4,38 @@ body {
 }
 table {
   /* width: 100%; */
-  table-layout: fixed;
+  border: 1px solid #ced7d4;
 }
 .mat-cell,
 .mat-header-cell {
   text-align: center;
   border-right: 1px solid #ced7d4;
 }
-.mat-elevation-z8 {
+/* .mat-elevation-z8 {
   border: 1px solid #ced7d4;
-}
+} */
 .mat-mdc-header-row {
   background-color: #ebefee;
 }
 .mat-mdc-form-field {
-  height: 80%;
-  width: 100%;
-  margin: 1px 0;
+  height: 100%;
+  width: 80%;
+  /* margin: 1px 0; */
 }
 .my-form-field {
   .mat-mdc-form-field-subscript-wrapper {
-    position: absolute;
+    position: relative;
+    height: 0;
   }
-}
-.description {
-  word-wrap: break-word !important;
-  white-space: unset !important;
-  flex: 0 0 28% !important;
-  width: 28% !important;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-
-  word-break: break-word;
-
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
+  .mat-mdc-form-field-infix {
+    padding-left: 25%;
+    padding-right: 25%;
+  }
+  /* .mdc-text-field--outlined{
+    --mdc-outlined-text-field-outline-width: 0
+  } */
 }
 
-tr.mat-row {
-  border: 1px solid #faff00;
-}
 ::ng-deep
   .mat-mdc-checkbox.mat-accent
   .mdc-checkbox--selected
@@ -65,6 +55,7 @@ tr.mat-row {
   --mdc-filled-text-field-focus-active-indicator-color: #02a783 !important;
   --mat-option-selected-state-label-text-color: #02a783 !important;
   --mdc-outlined-text-field-focus-outline-color: #02a783;
+  --mdc-filled-text-field-focus-label-text-color: #02a783 !important;
 }
 ::ng-deep
   .mat-primary
@@ -75,22 +66,32 @@ tr.mat-row {
 }
 
 .mat-column-Description {
-  max-width: 65px;
-  /* background: #000; */
-
   line-height: normal;
+  width: fit-content;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 28% !important;
+  overflow-wrap: break-word;
 }
+
 .mat-column-select {
   width: max-content;
 }
 .mat-column-Pre_Mitigation_score,
 .mat-column-Post_Mitigation_score {
   padding: 0;
+  .mat-mdc-select-arrow svg {
+    transform: translate(100%, -50%);
+  }
+  /* width: min-content; */
 }
-.mat-column-rowNumber{
+.mat-column-rowNumber {
   width: max-content;
 }
-.mat-mdc-form-field-type-mat-select:not(.mat-form-field-disabled)
-  .mat-mdc-text-field-wrapper {
-  cursor: crosshair;
+
+tr.mat-row {
+  max-height: 5%;
 }
