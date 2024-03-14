@@ -10,11 +10,12 @@ import { ApiService } from 'src/app/services/api.service';
 import { AverageScoreService } from 'src/app/services/average-score.service';
 import { ButtonenableService } from 'src/app/services/buttonenable.service';
 import { fakeAsync } from '@angular/core/testing';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.css'],
-  imports: [MatToolbarModule, MatIconModule, MatButtonModule, MatDialogModule],
+  imports: [MatToolbarModule, MatIconModule, MatButtonModule, MatDialogModule,CommonModule],
   standalone: true,
 })
 export class ToolbarComponent implements OnInit {

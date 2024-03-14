@@ -18,22 +18,30 @@ table {
   background-color: #ebefee;
 }
 .mat-mdc-form-field {
-  height: 100%;
-  width: 80%;
+  height: 80%;
+  width: 60%;
+  padding: 5px;
   /* margin: 1px 0; */
 }
+
 .my-form-field {
+  
   .mat-mdc-form-field-subscript-wrapper {
     position: relative;
     height: 0;
+    padding: 0;
   }
   .mat-mdc-form-field-infix {
-    padding-left: 25%;
-    padding-right: 25%;
+    min-height: 30px;
   }
   /* .mdc-text-field--outlined{
-    --mdc-outlined-text-field-outline-width: 0
+    --mdc-outlined-text-field-outline-width: 0px
   } */
+  .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix{
+    align-self: center;
+    padding-top: 2px;
+    padding-bottom: 0;
+  }
 }
 
 ::ng-deep
@@ -84,7 +92,7 @@ table {
 .mat-column-Post_Mitigation_score {
   padding: 0;
   .mat-mdc-select-arrow svg {
-    transform: translate(100%, -50%);
+    transform: translate(-80%,-50%);
   }
   /* width: min-content; */
 }
@@ -94,4 +102,7 @@ table {
 
 tr.mat-row {
   max-height: 5%;
+}
+.mat-mdc-select{
+  align-self: center;
 }

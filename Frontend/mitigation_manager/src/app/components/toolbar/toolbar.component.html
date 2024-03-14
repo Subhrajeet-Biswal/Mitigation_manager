@@ -2,21 +2,25 @@
   <span>Mitigation Manager</span>
   <span class="example-spacer"></span>
   <div class="buttons">
-    <button
-      mat-stroked-button
-      class="createbutton"
-      [disabled]="!enableCreate"
-      (click)="openCreateForm()"
-    >
-      Create
-    </button>
-    <button
-      mat-stroked-button
-      class="deletebutton"
-      [disabled]="!enableDelete"
-      (click)="openConfirmation()"
-    >
-      Delete
-    </button>
+    <div [ngClass]=" enableCreate ? '' : 'notallowed' ">
+      <button
+        mat-stroked-button
+        class="createbutton"
+        [disabled]="!enableCreate"
+        (click)="openCreateForm()"
+      >
+        Create
+      </button>
+    </div>
+    <div [ngClass]=" enableDelete ? '' : 'notallowed' ">
+      <button
+        mat-stroked-button
+        class="deletebutton"
+        [disabled]="!enableDelete"
+        (click)="openConfirmation()"
+      >
+        Delete
+      </button>
+    </div>
   </div>
 </mat-toolbar>

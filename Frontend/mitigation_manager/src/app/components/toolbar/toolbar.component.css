@@ -14,21 +14,28 @@
 .createbutton:enabled:hover {
   background-color: #0f5f4c;
 }
+
 .createbutton:disabled {
   margin: 10px;
   background-color: white;
   color: gray;
 }
+
 .deletebutton:enabled {
   background-color: #e12d39;
   color: white;
 }
 .deletebutton:enabled:hover {
   background-color: #cf2333;
+  
 }
 .body {
   justify-content: space-between;
 }
 .buttons {
-  justify-self: flex-end;
+  display: flex;
+  align-items: center;
+}
+.notallowed{
+  cursor: not-allowed!important;
 }
