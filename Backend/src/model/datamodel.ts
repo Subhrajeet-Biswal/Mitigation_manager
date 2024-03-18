@@ -1,24 +1,24 @@
-import { DataTypes } from 'sequelize';
+// import { DataTypes } from 'sequelize';
 
-const UserModel = (sequelize:any)=>{
+// const UserModel = (sequelize:any)=>{
     
 
-    sequelize.define('mitigation_methods',{
-        userName: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        email: {
-            type: DataTypes.STRING,
-            unique: true,
-            isEmail: true, //checks for email format
-            allowNull: false
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-    },{timestamps: true})
-}
+//     sequelize.define('mitigation_methods',{
+//         userName: {
+//             type: DataTypes.STRING,
+//             allowNull: false
+//         },
+//         email: {
+//             type: DataTypes.STRING,
+//             unique: true,
+//             isEmail: true, //checks for email format
+//             allowNull: false
+//         },
+//         password: {
+//             type: DataTypes.STRING,
+//             allowNull: false
+//         },
+//     },{timestamps: true})
+// }
 
-module.exports= {UserModel};
+// module.exports= {UserModel};
